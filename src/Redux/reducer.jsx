@@ -1,11 +1,11 @@
 const initialState = {
+  edit: false,
   type: 0, // show all todo list by default
   todos: {}
 }
 
 export default (state = initialState, action) => {
   let updatedTodos = state.todos
-  console.log(updatedTodos, action)
   switch (action.type) {
     case 'GET_TODO':
       return {
@@ -38,6 +38,22 @@ export default (state = initialState, action) => {
       return {
         ...state,
         type: action.status
+      }
+    case 'TOGGLE_TOUCH_EVENT':
+      return {
+        ...state,
+        edit: !state.edit
+      }
+    case 'CLEAR_COMPLETE':
+      return {
+        ...state,
+        todos: {...action.todos}
+      }
+    case 'REMOVE_BY_ID':
+      delete updatedTodos[action.selector]
+      return {
+        ...state,
+        todos: {...updatedTodos}
       }
     default:
       return state

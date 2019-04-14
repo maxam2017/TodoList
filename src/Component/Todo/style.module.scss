@@ -1,3 +1,4 @@
+$theme-color: #006aa6;
 .card{
     position: relative;
     width: 80%;
@@ -9,6 +10,17 @@
     color: #333;
     font-size: 1.5rem;
     cursor: pointer;
+    .remove{
+        position: absolute;
+        right: 1%;
+        top: 1%;
+        //transform: translate(50%,-50%);
+        color: #aaa;
+        font-size: 1.1rem;
+        &:hover{
+            color: #d12f2f;
+        }
+    }
     .left{
         z-index: 99;
         .checkbox{
@@ -17,6 +29,7 @@
             height: 24px;
         }
         .checkbox2{
+            color: $theme-color;
             width: 24px;
             height: 24px;
             font-size: 24px;

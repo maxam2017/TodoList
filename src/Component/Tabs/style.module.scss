@@ -1,0 +1,38 @@
+$theme-color: #006aa6;
+
+.tabs{
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    background: #fff;
+    justify-content: space-around;
+    border-top: 1px solid rgba(0,0,0,.05);
+    .tab{
+        width: 30%;
+        text-align: center;
+        padding-top: 9px;
+        cursor: pointer;
+        user-select: none;
+        .icon{
+            font-size: 24px;
+            line-height: 1;
+            color: #666;
+            &:global(.active){
+                color: $theme-color;
+            }
+        }
+        .attr{
+            color: #666;
+            margin-top: 5px;
+            font-size: small;
+            white-space: nowrap;
+            line-height: 1;
+            &:global(.active){
+                color: $theme-color;
+            }
+        }
+    }
+}

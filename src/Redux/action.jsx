@@ -61,6 +61,34 @@ export const editTodo = (id, title) => (dispatch) => {
   })
 }
 
+export const removeById = (id) => (dispatch) => {
+  if (storage.hasOwnProperty('todos')) {
+    let todos = JSON.parse(storage.getItem('todos'))
+    delete todos[id]
+    storage.setItem('todos', JSON.stringify(todos))
+    dispatch({
+      type: 'REMOVE_BY_ID',
+      selector: id
+    })
+  }
+}
+
+export const clearComplete = () => (dispatch) => {
+  if (storage.hasOwnProperty('todos')) {
+    let todos = JSON.parse(storage.getItem('todos'))
+    for (let key of Object.keys(todos)) {
+      if (todos[key].complete) {
+        delete todos[key]
+      }
+    }
+    storage.setItem('todos', JSON.stringify(todos))
+    dispatch({
+      type: 'CLEAR_COMPLETE',
+      todos: todos
+    })
+  }
+}
+
 export const changeStatus = (status) => (dispatch) => {
   dispatch({
     type: 'CHANGE_STATUS',
