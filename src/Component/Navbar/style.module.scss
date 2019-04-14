@@ -1,0 +1,35 @@
+$nav-height:56px;
+$primary: #4A90E2;
+$secondary: #00408B;
+
+.navbar{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    height:$nav-height;
+    width: 100%;
+    background-color:$primary;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navItem{
+    box-sizing: border-box;
+    line-height: $nav-height;
+    width: 100%;
+    height: 100%;
+    color: #00408B;
+    cursor: pointer;
+    transition: .3s;
+    text-align: center;
+    &:global(.active){
+        color: white;
+        border-bottom: 5px solid $secondary;
+    }
+    &:hover{
+        color:#ededed;
+         border-bottom: 5px solid lighten($secondary,10);
+    }
+}

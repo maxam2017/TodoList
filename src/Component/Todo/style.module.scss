@@ -1,0 +1,64 @@
+.card{
+    position: relative;
+    width: 80%;
+    margin: 2% auto;
+    background: #eee;
+    padding: 2% 5%;
+    border-radius: 5px;
+    display: flex;
+    color: #333;
+    font-size: 1.5rem;
+    cursor: pointer;
+    .left{
+        z-index: 99;
+        .checkbox{
+            background: #fff;
+            width: 24px;
+            height: 24px;
+        }
+        .checkbox2{
+            width: 24px;
+            height: 24px;
+            font-size: 24px;
+        }
+    }
+    .title{
+        margin-left: 10%;
+        word-break: break-all;
+    }
+    .title:global(.completed){
+        color: #999;
+        text-decoration: line-through;
+    }
+    input{
+        margin-left: 10%;
+        outline: none;
+        border: none;
+        font-size: 1.5rem;
+        padding: 1% 2%;
+        border-radius: 5px;
+    }
+    &:hover .right{
+        opacity: 1;
+    }
+    .right{
+        margin-left: 30px;
+        transition: .3s;
+        opacity: 0;
+        cursor: pointer;
+        i{
+            color: #777;
+        }
+    }
+    .calendar{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 10px;
+        color: #777;
+        i{
+            margin-right: 5px;
+            color: #777;
+        }
+    }
+}
